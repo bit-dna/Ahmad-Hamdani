@@ -1,0 +1,19 @@
+def check_ping():
+    hostname = "google.com"
+    response = os.system("ping -c 1 " + hostname)
+    # and then check the response...
+    if response == 0:
+        pingstatus = "Network Active"
+    else:
+        pingstatus = "Network Error"
+
+import os
+hostname = "google.com"
+response = os.system("ping -c 1 " + hostname)
+if response == 0:
+    pingstatus = "Network Active"
+else:
+    pingstatus = "Network Error"
+return pingstatus
+pingstatus = check_ping()
+    label = font_status.render("%s" % pingstatus, 1, (0,0,0))
